@@ -27,6 +27,15 @@ class InsectsController < ApplicationController
 
     redirect_to insect_path
   end
+  
+  
+  def show
+    @insect = Insect.find(params[:id])
+  end
+
+  def index
+    @insects = Insect.all
+  end
 
   private
 
