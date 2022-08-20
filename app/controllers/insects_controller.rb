@@ -1,6 +1,5 @@
 class InsectsController < ApplicationController
   def new
-    # @types = [""]
     @insect = Insect.new
   end
 
@@ -8,6 +7,8 @@ class InsectsController < ApplicationController
     @insect = Insect.new(insect_params)
     @insect.user = current_user
     @insect.save
+
+    redirect_to insect_path(@insect)
   end
 
   def edit
@@ -27,8 +28,7 @@ class InsectsController < ApplicationController
 
     redirect_to insect_path
   end
-  
-  
+
   def show
     @insect = Insect.find(params[:id])
   end
@@ -40,6 +40,6 @@ class InsectsController < ApplicationController
   private
 
   def insect_params
-    params.require(:insect).permit(:name, :description, :type)
+    params.require(:insect).permit(:name, :description, :order)
   end
 end
