@@ -1,0 +1,8 @@
+<h1>Create a new insect</h1>
+
+<%= simple_form_for(@insect) do |f| %>
+  <%= f.input :name %>
+  <%= f.input :description %>
+  <%= f.input :type, collection: Insect::TYPES %>
+  <%= f.submit %>
+<% end %>
