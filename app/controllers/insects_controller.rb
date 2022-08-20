@@ -1,4 +1,14 @@
 class InsectsController < ApplicationController
+  def new
+    # @types = [""]
+    @insect = Insect.new
+  end
+
+  def create
+    @insect = Insect.new(insect_params)
+    @insect.user = current_user
+    @insect.save
+  end
 
   def edit
     @insect = Insect.find(params[:id])
