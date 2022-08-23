@@ -1,0 +1,7 @@
+<h1> <%=  @insect.name %></h1>
+<p> <%= @insect.description %></p>
+<p> <%= @insect.order %></p>
+
+<%= link_to "page d'acceuil", insects_path %>
+
+<%= link_to "modifier", edit_insect_path(@insect) %>

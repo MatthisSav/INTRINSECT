@@ -1,0 +1,14 @@
+<h1>Vos insectes</h1>
+
+<% @insects.each do |insect| %>
+
+  <h2><%= insect.name%></h2>
+  <p> <%= insect.description %></p>
+  <p> <%= insect.order %></p>
+  <%=link_to "Allez voir cet insecte!", insect_path(insect) %>
+  <%= link_to "Supprimer cet insecte : #{insect.name}",
+      insect_path(insect),
+      method: :delete,
+      data: { confirm: "Are you sure?"} %>
+
+<% end %>
