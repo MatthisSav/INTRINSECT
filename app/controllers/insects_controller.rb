@@ -26,7 +26,7 @@ class InsectsController < ApplicationController
     @insect = Insect.find(params[:id])
     @insect.destroy
 
-    redirect_to insect_path
+    redirect_to insects_path
   end
 
   def show
