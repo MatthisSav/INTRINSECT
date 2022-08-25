@@ -1,9 +1,11 @@
-<%= form_for(@insect) do |f|%>
+<%= simple_form_for [ @insect ] do |f| %>
   <%= f.label :name %>
   <%= f.text_field :name %>
   <%= f.label :description %>
   <%= f.text_field :description %>
   <%= f.label :order %>
   <%= f.text_field :order %>
-  <%= f.submit %>
+  <%= f.label "ajouter des images" %>
+  <%= f.file_field :photo %>
+  <%= f.submit "Modifier l'insect", class: "btn btn-primary" %>
 <% end %>
