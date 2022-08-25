@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>INTRINSECT</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -18,7 +17,7 @@
       <%= link_to "#", class: "navbar-brand" do %>
         <%= image_tag "https://icons.iconarchive.com/icons/icons8/windows-8/512/Animals-Insect-icon.png" %>
       <% end %>
-
+      <h1>I N T R I N S E C T</h1>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -51,5 +50,19 @@
   </div>
 
     <%= yield %>
+
+  <div class="footer">
+    <div class="footer-links">
+      <a href="#"><i class="fab fa-github"></i></a>
+      <a href="#"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-facebook"></i></a>
+      <a href="#"><i class="fab fa-twitter"></i></a>
+      <a href="#"><i class="fab fa-linkedin"></i></a>
+    </div>
+    <div class="footer-copyright">
+      Intrinsect is made with <i class="fas fa-heart"></i> by Marcelo l'Asticot, Raphael la Coccinelle et Matthis la Fourmis
+    </div>
+  </div>
+
   </body>
 </html>
