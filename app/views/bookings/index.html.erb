@@ -1,16 +1,23 @@
 <h1>Vos Reservations</h1>
 
 <% @bookings.each do |booking| %>
-
-  <h2><%= booking.booking_start_date%></h2>
-  <p> <%= booking.booking_end_date %></p>
+<div class="card-product bookings">
+  <%= image_tag(booking.insect.photos.first) %>
+  <div class="card-product-infos">
+    <h2><%= booking.insect.name %> </h2>
+    <p><%= booking.insect.description %></p>
+    <p><em>Du : </em> <%=booking.booking_start_date.strftime("%Y-%m-%d %I:%M:%S")%></p>
+    <p><em>Au : </em><%= booking.booking_end_date.strftime("%Y-%m-%d %I:%M:%S") %></p>
+    <br>
   <%=link_to "Allez voir cette réservation", booking_path(booking) %>
-  <%= link_to "Supprimer cette réservation : #{booking.booking_start_date}",
+  <br>
+  <%= link_to "Supprimer cette réservation",
       booking_path(booking),
       method: :delete,
       data: { confirm: "Are you sure?"} %>
+  </div>
+</div>
 
 
 
 <% end %>
-
