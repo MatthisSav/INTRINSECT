@@ -6,6 +6,6 @@
   <%= f.label :order %>
   <%= f.text_field :order %>
   <%= f.label "ajouter des images" %>
-  <%= f.file_field :photo %>
+  <%= f.file_field :photos, multiple: true %>
   <%= f.submit "Modifier l'insect", class: "btn btn-primary" %>
 <% end %>

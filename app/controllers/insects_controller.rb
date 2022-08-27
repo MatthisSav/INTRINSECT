@@ -40,6 +40,6 @@ class InsectsController < ApplicationController
   private
 
   def insect_params
-    params.require(:insect).permit(:name, :description, :order)
+    params.require(:insect).permit(:name, :description, :order, photos: [])
   end
 end

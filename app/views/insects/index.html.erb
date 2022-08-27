@@ -1,10 +1,10 @@
 <div class="container">
 
-  <h1>Vos insectes</h1>
+  <h1>Les insectes</h1>
     <div class="row">
       <% @insects.each do |insect| %>
         <div class="card-product col-sm-12 col-md-3">
-          <img src="https://images.unsplash.com/photo-1518737743670-3f217c4def4a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2960&q=80" />
+          <%= cl_image_tag insect.photos.first.key,  class:"d-block w-100" %>
             <div class="card-product-infos">
                 <h2><%= insect.name.capitalize%></h2>
                 <p> <i><%= insect.order %></i></p>
