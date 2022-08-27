@@ -26,13 +26,15 @@
     </div>
 
     <div class="col-sm-6 col-md-6">
-      <h1> <%=  @insect.name %></h1>
+      <h1> <%=  @insect.name.capitalize %></h1>
       <p> <%= @insect.description %></p>
       <p> <b>Ordre :</b> <%= @insect.order %></p>
 
       <%= link_to "Voir tous les insectes", insects_path %>
 
       <%= link_to "Modifier", edit_insect_path(@insect) %>
+      <br>
+      <%= link_to "Réserver cet insecte", new_insect_booking_path(@insect), class:"btn btn-primary mt-3"%>
     </div>
   </div>
 </div>
