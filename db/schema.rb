@@ -43,6 +43,17 @@ ActiveRecord::Schema.define(version: 2022_08_27_084634) do
     t.index ["blob_id", "variation_digest"], name: "index_active_storage_variant_records_uniqueness", unique: true
   end
 
+  create_table "bookings", force: :cascade do |t|
+    t.datetime "booking_start_date"
+    t.datetime "booking_end_date"
+    t.bigint "user_id", null: false
+    t.bigint "insect_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["insect_id"], name: "index_bookings_on_insect_id"
+    t.index ["user_id"], name: "index_bookings_on_user_id"
+  end
+
   create_table "insects", force: :cascade do |t|
     t.string "name"
     t.text "description"
@@ -68,5 +79,7 @@ ActiveRecord::Schema.define(version: 2022_08_27_084634) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "bookings", "insects"
+  add_foreign_key "bookings", "users"
   add_foreign_key "insects", "users"
 end

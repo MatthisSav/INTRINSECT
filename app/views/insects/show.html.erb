@@ -30,10 +30,9 @@
       <p> <%= @insect.description %></p>
       <p> <b>Ordre :</b> <%= @insect.order %></p>
 
+      <%= link_to "Voir tous les insectes", insects_path %>
 
-      <%= link_to "voir tous les insectes", insects_path %>
-
-      <%= link_to "modifier", edit_insect_path(@insect) %>
+      <%= link_to "Modifier", edit_insect_path(@insect) %>
     </div>
   </div>
 </div>
