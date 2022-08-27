@@ -1,8 +1,14 @@
-<h1>Create a new insect</h1>
+<div class="container">
+  <h1>Ajouter un nouvel insecte</h1>
 
-<%= simple_form_for(@insect) do |f| %>
-  <%= f.input :name %>
-  <%= f.input :description %>
-  <%= f.input :order, collection: Insect::TYPES %>
-  <%= f.submit %>
-<% end %>
+  <%= simple_form_for (@insect) do |f| %>
+    <%= f.input :name, label: "Nom",input_html: { class: "h1" } %>
+    <%= f.input :description %>
+    <%= f.input :order, collection: Insect::TYPES %>
+    <%= f.label "ajouter des images" %>
+    <br>
+    <%= f.file_field :photos, multiple: true %>
+    <br>
+    <%= f.submit "Ajouter l'insecte", class: "btn btn-primary mt-3" %>
+  <% end %>
+</div>
