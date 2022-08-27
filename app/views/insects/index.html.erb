@@ -1,18 +1,28 @@
-<h1>Vos insectes</h1>
+<div class="container">
 
-<% @insects.each do |insect| %>
+  <h1>Vos insectes</h1>
+    <div class="row">
+      <% @insects.each do |insect| %>
+        <div class="card-product col-sm-12 col-md-3">
+          <img src="https://images.unsplash.com/photo-1518737743670-3f217c4def4a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2960&q=80" />
+            <div class="card-product-infos">
+                <h2><%= insect.name.capitalize%></h2>
+                <p> <i><%= insect.order %></i></p>
+                <div class="icon">
+                  <%=link_to insect_path(insect) do %>
+                    <i class="fa-solid fa-eye"></i>
+                  <% end %>
+                  <%= link_to '<i class="fa-solid fa-trash"></i>'.html_safe,
+                    insect_path(insect),
+                    method: :delete,
+                    data: { confirm: "Are you sure?"} %>
+                </div>
+              </div>
+        </div>
+      <% end %>
+    </div>
 
-  <h2><%= insect.name%></h2>
-  <p> <%= insect.description %></p>
-  <p> <%= insect.order %></p>
-  <%=link_to "Allez voir cet insecte!", insect_path(insect) %>
-  <%= link_to "Supprimer cet insecte : #{insect.name}",
-      insect_path(insect),
-      method: :delete,
-      data: { confirm: "Are you sure?"} %>
+  <%= link_to "Creation d'insecte", new_insect_path %>
+  <%= link_to "xxxx", bookings_path %>
 
-<% end %>
-
-<%# <%= link_to "Creation d'insecte", new_insect_path %>
-
-<%# <%= link_to "xxxx", bookings_path %> %> %>
+</div>
