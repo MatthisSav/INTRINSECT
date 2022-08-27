@@ -34,5 +34,12 @@
 }
 
 .card-product .card-product-infos {
+  display: inline-grid;
   padding: 16px;
+}
+
+.icon {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-end;
 }
