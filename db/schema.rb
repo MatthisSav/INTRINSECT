@@ -10,10 +10,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+
 ActiveRecord::Schema.define(version: 2022_08_25_175749) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+
+  create_table "bookings", force: :cascade do |t|
+    t.datetime "booking_start_date"
+    t.datetime "booking_end_date"
+    t.bigint "user_id", null: false
+    t.bigint "insect_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["insect_id"], name: "index_bookings_on_insect_id"
+    t.index ["user_id"], name: "index_bookings_on_user_id"
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -41,6 +53,7 @@ ActiveRecord::Schema.define(version: 2022_08_25_175749) do
     t.bigint "blob_id", null: false
     t.string "variation_digest", null: false
     t.index ["blob_id", "variation_digest"], name: "index_active_storage_variant_records_uniqueness", unique: true
+
   end
 
   create_table "insects", force: :cascade do |t|
@@ -65,7 +78,12 @@ ActiveRecord::Schema.define(version: 2022_08_25_175749) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+
+  add_foreign_key "bookings", "insects"
+  add_foreign_key "bookings", "users"
+
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
+
   add_foreign_key "insects", "users"
 end

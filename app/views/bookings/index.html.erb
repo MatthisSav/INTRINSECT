@@ -1,0 +1,16 @@
+<h1>Vos Reservations</h1>
+
+<% @bookings.each do |booking| %>
+
+  <h2><%= booking.booking_start_date%></h2>
+  <p> <%= booking.booking_end_date %></p>
+  <%=link_to "Allez voir cette réservation", booking_path(booking) %>
+  <%= link_to "Supprimer cette réservation : #{booking.booking_start_date}",
+      booking_path(booking),
+      method: :delete,
+      data: { confirm: "Are you sure?"} %>
+
+
+
+<% end %>
+
