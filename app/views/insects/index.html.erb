@@ -13,10 +13,14 @@
                   <%=link_to insect_path(insect) do %>
                     <i class="fa-solid fa-eye"></i>
                   <% end %>
-                  <%= link_to '<i class="fa-solid fa-trash"></i>'.html_safe,
+
+                  <% if policy(insect).destroy? %>
+                     <%= link_to '<i class="fa-solid fa-trash"></i>'.html_safe,
                     insect_path(insect),
                     method: :delete,
                     data: { confirm: "Are you sure?"} %>
+                  <% end %>
+
                 </div>
               </div>
           <% end %>
