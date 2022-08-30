@@ -2,6 +2,7 @@ class BookingsController < ApplicationController
   def new
     @booking = Booking.new
     @insect = Insect.find(params[:insect_id])
+    authorize @booking
   end
 
   def create
@@ -11,10 +12,12 @@ class BookingsController < ApplicationController
     @booking.save
 
     redirect_to booking_path(@booking)
+    authorize @booking
   end
 
   def edit
     @booking = Booking.find(params[:id])
+    authorize @booking
   end
 
   def update
@@ -22,6 +25,7 @@ class BookingsController < ApplicationController
     @booking.update(booking_params)
 
     redirect_to booking_path(@booking)
+    authorize @booking
   end
 
   def destroy
@@ -29,14 +33,17 @@ class BookingsController < ApplicationController
     @booking.destroy
 
     redirect_to bookings_path
+    authorize @booking
   end
 
   def show
     @booking = Booking.find(params[:id])
+    authorize @booking
   end
 
   def index
     @bookings = Booking.all
+    @bookings = policy_scope(Booking).order(created_at: :desc)
   end
 
   private
