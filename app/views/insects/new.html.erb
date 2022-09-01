@@ -5,6 +5,9 @@
     <%= f.input :name, label: "Nom",input_html: { class: "h1" } %>
     <%= f.input :description %>
     <%= f.input :order, collection: Insect::TYPES %>
+    <%= f.input :address,
+              input_html: { data: { geocoder_target: "address" }, class: "d-none"},
+              wrapper_html: { data: { controller: "geocoder", geocoder_api_key_value: ENV['MAPBOX_API_KEY'] } } %>
     <%= f.label "ajouter des images" %>
     <br>
     <%= f.file_field :photos, multiple: true %>
