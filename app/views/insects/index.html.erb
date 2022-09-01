@@ -1,30 +1,48 @@
 <div class="container">
 
-    <div class="row d-flex justify-content-center">
-      <h1>Les insectes</h1>
-      <% @insects.each do |insect| %>
-        <div class="card-product col-sm-12 col-md-3">
-          <%= cl_image_tag insect.photos.first.key,  class:"d-block w-100" %>
-          <%=link_to insect_path(insect) do %>
-            <div class="card-product-infos">
-                <h2><%= insect.name.capitalize%></h2>
-                <p> <i><%= insect.order %></i></p>
-                <div class="icon">
-                  <%=link_to insect_path(insect) do %>
-                    <i class="fa-solid fa-eye"></i>
-                  <% end %>
+  <div class="row d-flex justify-content-center">
+    <h1>Les insectes</h1>
+    <% @insects.each do |insect| %>
+      <div class="card-product col-sm-12 col-md-3">
+        <%= cl_image_tag insect.photos.first.key,  class:"d-block w-100" %>
+        <%=link_to insect_path(insect) do %>
+          <div class="card-product-infos">
+              <h2><%= insect.name.capitalize%></h2>
+              <p> <i><%= insect.order %></i></p>
+              <div class="icon">
+                <%=link_to insect_path(insect) do %>
+                  <i class="fa-solid fa-eye"></i>
+                <% end %>
 
-                  <% if policy(insect).destroy? %>
-                     <%= link_to '<i class="fa-solid fa-trash"></i>'.html_safe,
-                    insect_path(insect),
-                    method: :delete,
-                    data: { confirm: "Are you sure?"} %>
-                  <% end %>
+  <div style="width: 100%; height: 600px;"
+  data-controller="mapbox"
+  data-mapbox-markers-value="<%= @markers.to_json %>"
+  data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
 
-                </div>
+  <div class="row">
+    <% @insects.each do |insect| %>
+      <div class="card-product col-sm-12 col-md-3">
+        <%= cl_image_tag insect.photos.first.key,  class:"d-block w-100" %>
+        <%=link_to insect_path(insect) do %>
+          <div class="card-product-infos">
+              <h2><%= insect.name.capitalize%></h2>
+              <p> <i><%= insect.order %></i></p>
+              <div class="icon">
+                <%=link_to insect_path(insect) do %>
+                  <i class="fa-solid fa-eye"></i>
+                <% end %>
+
+                <% if policy(insect).destroy? %>
+                    <%= link_to '<i class="fa-solid fa-trash"></i>'.html_safe,
+                  insect_path(insect),
+                  method: :delete,
+                  data: { confirm: "Are you sure?"} %>
+                <% end %>
+
               </div>
-          <% end %>
-        </div>
-      <% end %>
-    </div>
+            </div>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
 </div>

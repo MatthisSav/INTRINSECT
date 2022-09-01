@@ -43,11 +43,21 @@ class InsectsController < ApplicationController
   def index
     @insects = Insect.all
     @insects = policy_scope(Insect).order(created_at: :desc)
+
+    # the `geocoded` scope filters only flats with coordinates (latitude & longitude)
+    @markers = @insects.geocoded.map do |insect|
+      {
+        lat: insect.latitude,
+        lng: insect.longitude,
+        info_window: render_to_string(partial: "info_window", locals: { insect: insect }),
+        image_url: helpers.asset_url("pap.png")
+      }
+    end
   end
 
   private
 
   def insect_params
-    params.require(:insect).permit(:name, :description, :order, photos: [])
+    params.require(:insect).permit(:name, :description, :order, :address, photos: [])
   end
 end
