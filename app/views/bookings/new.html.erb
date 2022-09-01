@@ -1,7 +1,15 @@
-<h1>Create a new Booking</h1>
+<div class="container">
+  <div class="sign-booking">
+    <h1><%= @insect.name.capitalize %></h1>
+    <h5>Disponible à la location</h5>
+    <br>
+    <%# <%= cl_image_tag @insect.photos.first.key %>
 
-<%= simple_form_for [@insect, @booking] do |f| %>
-  <%= f.input :booking_start_date%>
-  <%= f.input :booking_end_date %>
-  <%= f.submit %>
-<% end %>
+    <%= simple_form_for [@insect, @booking] do |f| %>
+      <%= f.input :booking_start_date, label: 'Du'  %>
+      <%= f.input :booking_end_date, label: 'Au'   %>
+      <br>
+      <%= f.button :submit, "C'est parti !" %>
+  <% end %>
+  </div>
+</div>

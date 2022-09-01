@@ -1,9 +1,13 @@
-<h1> <%=  @booking.booking_start_date %></h1>
-<p> <%= @booking.booking_end_date %></p>
-
-<%= link_to "page d'acceuil", bookings_path %>
-
-<%= link_to "modifier", edit_booking_path(@booking) %>
-
-
-
+<div class="container">
+    <div class="card-body ">
+      <h1 class="d-flex justify-content-center">🎉 Yay ! 🎉</h1>
+      <h3 class="d-flex justify-content-center"> Votre <%=  @booking.insect.name.capitalize %> est bien réservé(e) ! 🪲</h3>
+      <br>
+      <div class="insect-pic d-flex justify-content-center">
+        <%= cl_image_tag @booking.insect.photos.first.key %>
+      </div>
+      <br>
+    </div>
+      <br>
+      <%= link_to "Retourner à l'accueil", bookings_path, :class => "btn btn-light" %>
+</div>
