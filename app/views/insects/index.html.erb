@@ -1,7 +1,7 @@
 <div class="container">
 
-  <h1>Les insectes</h1>
-    <div class="row">
+    <div class="row d-flex justify-content-center">
+      <h1>Les insectes</h1>
       <% @insects.each do |insect| %>
         <div class="card-product col-sm-12 col-md-3">
           <%= cl_image_tag insect.photos.first.key,  class:"d-block w-100" %>

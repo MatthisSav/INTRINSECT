@@ -43,3 +43,17 @@
   justify-content: space-around;
   align-items: flex-end;
 }
+
+.card-body {
+  justify-content: space-between;
+  border: 1px solid lightgrey;
+  border-radius: 25px;
+  padding: 16px;
+  box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.1);
+  background: white;
+}
+
+.card-body img {
+  width: 400px;
+  border-radius: 8px;
+}
