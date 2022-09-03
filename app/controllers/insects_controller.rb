@@ -37,6 +37,7 @@ class InsectsController < ApplicationController
 
   def show
     @insect = Insect.find(params[:id])
+    @review = Review.new
     authorize @insect
   end
 
