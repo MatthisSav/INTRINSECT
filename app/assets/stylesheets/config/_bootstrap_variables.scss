@@ -33,3 +33,7 @@ $container-max-widths: (
 .container {
   justify-content: space-between;
 }
+
+.container textarea {
+  width: 75%;
+}
