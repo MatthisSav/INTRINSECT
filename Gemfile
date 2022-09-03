@@ -25,6 +25,7 @@ gem 'jbuilder', '~> 2.7'
 gem 'bootstrap', '~> 5.2.0'
 
 gem 'pundit'
+gem 'turbolinks_render'
 
 
 # Use Active Storage variant
