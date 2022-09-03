@@ -15,12 +15,11 @@
       <%=link_to "Consulter", booking_path(booking) %>
     <%# </div> %>
 
-    <div class="btn btn-intrinsect">
-      <%= link_to "Supprimer",
-      booking_path(booking),
-      method: :delete,
-      data: { confirm: "Are you sure?"} %>
-    </div>
+    <%= link_to "Supprimer",
+    booking_path(booking),
+    method: :delete,
+    data: { confirm: "Are you sure?"},
+    class:"btn btn-primary" %>
   </div>
 </div>
 

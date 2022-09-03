@@ -31,7 +31,7 @@
       <p> <%= @insect.description %></p>
       <p> <b>Ordre :</b> <%= @insect.order %></p>
       <% if policy(@insect).update? %>
-        <%= link_to "Modifier mon insect", edit_insect_path(@insect), class: "btn btn-outline-warning me-1" %>
+        <%= link_to "Modifier mon insecte", edit_insect_path(@insect), class: "btn btn-outline-warning me-1" %>
         <% if policy(@insect).destroy? %>
               <%= link_to '<i class="fa-solid fa-trash"></i>'.html_safe,
             insect_path(@insect),
@@ -50,7 +50,7 @@
       <%= pluralize @insect.reviews.size, "commentaire" %>
     </h4>
     <% if @insect.reviews.blank? %>
-      <p class="p-3 mb-0 text-muted">Soit le premier à laisser un avis pour <%= @insect.name %></p>
+      <p class="p-3 mb-0 text-muted">Soyez le premier à laisser un avis pour <%= @insect.name %></p>
     <% else %>
       <% @insect.reviews.each do |review| %>
           <div class="list-group list-group-flush p-3">
@@ -62,7 +62,7 @@
     <div class="list-group list-group-flush p-3">
       <%= simple_form_for [ @insect, @review ], remote: true do |f| %>
         <%= f.input :content, label:"Votre commentaire", as: :text %>
-        <%= f.button :submit, class:"btn btn-outline-secondary mt-1" %>
+        <%= f.button :submit, value:"Publier", class:"btn btn-outline-secondary mt-1" %>
       <% end %>
     </div>
   </div>

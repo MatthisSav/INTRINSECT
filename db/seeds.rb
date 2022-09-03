@@ -28,7 +28,8 @@ mouche = Insect.new(
   order: "Diptères",
   user: user1,
   latitude: 48.88433,
-  longitude: 2.35072
+  longitude: 2.35072,
+  address: "7 Rue des Islettes, 75018 Paris"
 )
 mouche.photos.attach(io: File.open('db/images/mouche_1.jpg'), filename: 'mouche_1.jpg')
 mouche.photos.attach(io: File.open('db/images/mouche_2.jpeg'), filename: 'mouche_2.jpeg')
@@ -42,7 +43,8 @@ pyrops = Insect.new(
   order: "Hémiptères",
   user: user1,
   latitude: 48.8648482,
-  longitude: 2.3798534
+  longitude: 2.3798534,
+  address: "16 Vla Gaudelet, 75011 Paris"
 )
 pyrops.photos.attach(io: File.open('db/images/pyrops_1.jpg'), filename: 'pyrops_1.jpg')
 pyrops.photos.attach(io: File.open('db/images/pyrops_2.jpg'), filename: 'pyrops_2.jpg')
@@ -51,7 +53,7 @@ puts '=> A new pyrops insect has been created'
 
 punaise = Insect.new(
   name: "Oh pinaise !",
-  description: "Sans intérêt",
+  description: "Une punaise sans grand intérêt",
   order: "Pentatomidae",
   user: user1,
   latitude: 48.77758,
@@ -126,4 +128,42 @@ coccinelles = Insect.new(
 coccinelles.photos.attach(io: File.open('db/images/coccinelle_1.jpg'), filename: 'coccinelle_1.jpg')
 coccinelles.save!
 puts '=> A new coccinelle insect has been created'
+
+coleoptere = Insect.new(
+  name: "coléoptère",
+  description: "Avec sa machoire puissante, mes coléoptères pourront vous aider pour tout type de travaux. N'hésitez pas à me contacter pour plus d'informations !",
+  order: "Coléoptères",
+  user: user3,
+  latitude: 48.84338,
+  longitude: 2.32277
+)
+coleoptere.photos.attach(io: File.open('db/images/coleoptere_1.jpeg'), filename: 'coleoptere_1.jpeg')
+coleoptere.photos.attach(io: File.open('db/images/coleoptere_2.jpeg'), filename: 'coleoptere_2.jpeg')
+coleoptere.save!
+puts '=> A new coléoptère insect has been created'
+
+papillons = Insect.new(
+  name: "papillons",
+  description: "En cas de coup dur, louez mes papillons qui vous apporterons chances et bonheur durant toute la période de location",
+  order: "Arthropoda",
+  user: user3,
+  latitude: 48.79512,
+  longitude: 2.31616
+)
+papillons.photos.attach(io: File.open('db/images/papillon.jpeg'), filename: 'papillon.jpeg')
+papillons.photos.attach(io: File.open('db/images/papillon_2.jpeg'), filename: 'papillon_2.jpeg')
+papillons.save!
+puts '=> A new papillon insect has been created'
+
+libellules = Insect.new(
+  name: "libellules",
+  description: "En cas de coup dur, louez mes libellules qui vous apporterons chances et bonheur durant toute la période de location",
+  order: "Arthropoda",
+  user: user3,
+  latitude: 48.85964,
+  longitude: 2.29405
+)
+libellules.photos.attach(io: File.open('db/images/libellule_1.jpg'), filename: 'libellule_1.jpg')
+libellules.save!
+puts '=> A new scorpion insect has been created'
 puts 'Finished!'

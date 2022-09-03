@@ -1,2 +1,6 @@
-<h2><%= insect.name %></h2>
-<p><%= insect.address %></p>
+  <div class="card-info-window">
+    <%= cl_image_tag insect.photos.first.key,  class:"d-block w-100 mb-2", style:"border-radius:4px;" %>
+    <h5 style="color:#F68265"><%= insect.name.capitalize %></h5>
+    <p class="mb-0"><%= insect.address %></p>
+<%= link_to "Voir", insect_path(insect), :class => "btn btn-primary mt-1", style:"text-decoration:none" %>
+  </div>

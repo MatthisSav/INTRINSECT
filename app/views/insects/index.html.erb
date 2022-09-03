@@ -26,20 +26,12 @@
 
   <div class="row d-flex justify-content-center">
     <% @insects.each do |insect| %>
-      <div class="card-product col-sm-12 col-md-3">
+      <div class="card-product col-sm-12 col-md-3 col-index zoomage">
         <%= cl_image_tag insect.photos.first.key,  class:"d-block w-100" %>
         <%=link_to insect_path(insect) do %>
           <div class="card-product-infos">
               <h2><%= insect.name.capitalize%></h2>
-
               <p> <%= insect.order %></p>
-
-              <div class="icon">
-                <%=link_to insect_path(insect) do %>
-                  <i class="fa-solid fa-eye"></i>
-                <% end %>
-
-              </div>
             </div>
         <% end %>
       </div>

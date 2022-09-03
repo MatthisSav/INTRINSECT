@@ -15,12 +15,12 @@
 
 a {
   text-decoration: none;
-  color: white;
+  // color: white;
 }
 
-a:hover {
-  color: whitesmoke;
-}
+// a:hover {
+//   color: whitesmoke;
+// }
 
 body {
   background-color: #F7F4F3;
@@ -28,4 +28,23 @@ body {
 
 h1, h2, h3, h4, p {
   color: #2D3A3A;
+}
+
+.zoomage {
+  transition: transform .4s ease;
+  }
+
+.zoomage:hover {
+transform: scale(1.04);
+}
+
+.mapboxgl-popup-content{
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  border-radius: 8px;
+  background-color: #F7F4F3;
+}
+
+.card-info-window > a {
+  color: #f7f4f3;
+  text-decoration: none;
 }

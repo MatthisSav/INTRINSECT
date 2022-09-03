@@ -38,11 +38,20 @@ $container-max-widths: (
   width: 75%;
 }
 
-.btn {
-  background-color: #BA2D0B !important;
+.btn-primary {
+  background-color: #F68265 !important;
   color: whitesmoke !important;
+  border: none !important;
+}
+
+.btn-primary:hover {
+  background-color: #c14f32 !important;
 }
 
 i {
-  color: #BA2D0B;
+  color: rgb(60,60,60);
+}
+
+.col-index {
+  width:29% !important;
 }
