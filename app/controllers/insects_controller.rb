@@ -41,8 +41,12 @@ class InsectsController < ApplicationController
   end
 
   def index
-    @insects = Insect.all
-    @insects = policy_scope(Insect).order(created_at: :desc)
+    if params[:query].present?
+      @insectss = Insect.search_by_name_and_description(params[:query])
+    else
+      @insectss = Insect.all
+    end
+    @insects = policy_scope(@insectss).order(created_at: :desc)
 
     # the `geocoded` scope filters only flats with coordinates (latitude & longitude)
     @markers = @insects.geocoded.map do |insect|
