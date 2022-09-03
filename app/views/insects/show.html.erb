@@ -30,11 +30,12 @@
       <p> <%= @insect.description %></p>
       <p> <b>Ordre :</b> <%= @insect.order %></p>
 
-      <%= link_to "Voir tous les insectes", insects_path %>
+      <%# <%= link_to "Voir tous les insectes", insects_path %>
 
-      <%= link_to "Modifier", edit_insect_path(@insect) %>
+      <%= link_to "Modifier", edit_insect_path(@insect), class:"btn btn-intrinsect" %>
       <br>
-      <%= link_to "Réserver cet insecte", new_insect_booking_path(@insect), class:"btn btn-primary mt-3"%>
+      <br>
+      <%= link_to "Réserver cet insecte", new_insect_booking_path(@insect), class:"btn btn-intrinsect"%>
 <%# add review %>
 
       <div id="reviews" class="mt-4">
@@ -42,16 +43,19 @@
           <%= pluralize @insect.reviews.size, "review" %>
         </h3>
         <% if @insect.reviews.blank? %>
-          Soit le premier à laisser un avis pour <%= @insect.name %>
+          Soiyez le premier à laisser un avis sur <%= @insect.name %> !
         <% else %>
           <% @insect.reviews.each do |review| %>
             <p><%= review.content %></p>
           <% end %>
         <% end %>
 
+        <br>
+        <br>
+
         <%= simple_form_for([ @insect, @review ]) do |f| %>
           <%= f.input :content, label:"Votre commentaire", as: :text %>
-          <%= f.button :submit, class:"btn btn-outline-secondary mt-1" %>
+          <%= f.button :submit, class:"btn btn-outline mt-1" %>
         <% end %>
       </div>
     </div>

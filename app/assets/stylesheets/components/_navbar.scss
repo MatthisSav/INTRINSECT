@@ -1,8 +1,9 @@
 .navbar-lewagon {
   justify-content: space-between;
-  background: whitesmoke;
+  background: #F7F4F3;
   text-decoration: none;
   margin-bottom: 40px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;;
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -18,5 +19,9 @@
 }
 
 .font-logo:hover {
-  color: black;
+  color: #354646;
+}
+
+.navbar-brand {
+  color: #2D3A3A;
 }
