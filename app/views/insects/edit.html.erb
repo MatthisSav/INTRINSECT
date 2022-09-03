@@ -1,14 +1,27 @@
-<%= simple_form_for [ @insect ] do |f| %>
-  <%= f.label :name %>
-  <%= f.text_field :name %>
-  <%= f.label :description %>
-  <%= f.text_field :description %>
-  <%= f.label :order %>
-  <%= f.text_field :order %>
-      <%= f.input :address,
-              input_html: { data: { geocoder_target: "address" }, class: "d-none"},
-              wrapper_html: { data: { controller: "geocoder", geocoder_api_key_value: ENV['MAPBOX_API_KEY'] } } %>
-  <%= f.label "ajouter des images" %>
-  <%= f.file_field :photos, multiple: true %>
-  <%= f.submit "Modifier l'insect", class: "btn btn-primary" %>
-<% end %>
+<div class="container">
+  <div class="sign-booking", style="width: 50%">
+    <%= simple_form_for [ @insect ] do |f| %>
+      <%= f.label :nom %>
+      <br>
+      <%= f.text_field :name %>
+      <br>
+      <br>
+      <%= f.label :description %>
+      <br>
+      <%= f.text_area :description  %>
+      <br>
+      <br>
+      <%= f.input :order, label: 'Ordre naturel', collection: Insect::TYPES %>
+      <br>
+          <%= f.input :address, label: 'Adresse',
+                  input_html: { data: { geocoder_target: "address" }, class: "d-none"},
+                  wrapper_html: { data: { controller: "geocoder", geocoder_api_key_value: ENV['MAPBOX_API_KEY'] } } %>
+                  <br>
+      <%= f.label "Ajouter des photos" %>
+      <%= f.file_field :photos, multiple: true %>
+      <br>
+      <br>
+      <%= f.submit "Confirmer", class: "btn btn-light" %>
+    <% end %>
+  </div>
+</div>
