@@ -15,5 +15,17 @@
 
 a {
   text-decoration: none;
-  color: black;
+  color: white;
+}
+
+a:hover {
+  color: whitesmoke;
+}
+
+body {
+  background-color: #F7F4F3;
+}
+
+h1, h2, h3, h4, p {
+  color: #2D3A3A;
 }
