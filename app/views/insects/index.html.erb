@@ -2,19 +2,27 @@
 
     <h1>Les insectes</h1>
 
-    <%= form_tag insects_path, method: :get do %>
-      <%= text_field_tag :query,
-      params[:query],
-      class: "form-control",
-      placeholder: "Find a movie"%>
-      <%= submit_tag "Search", class: "btn btn-primary" %>
-    <% end %>
+    <br>
 
+    <div>
+      <%= form_tag insects_path, method: :get do %>
+        <%= text_field_tag :query,
+        params[:query],
+        class: "form-control",
+        placeholder: "Quel insecte recherchez-vous ?"%>
+        <br>
+        <%# <%= submit_tag "Rechercher", class: "btn btn-light" %>
+      <% end %>
+    </div>
+
+    <br>
 
     <div style="width: 100%; height: 600px;"
     data-controller="mapbox"
     data-mapbox-markers-value="<%= @markers.to_json %>"
     data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
+
+    <br>
 
   <div class="row d-flex justify-content-center">
     <% @insects.each do |insect| %>
@@ -23,20 +31,9 @@
         <%=link_to insect_path(insect) do %>
           <div class="card-product-infos">
               <h2><%= insect.name.capitalize%></h2>
-              <p> <i><%= insect.order %></i></p>
-              <div class="row">
-  <div class="col-3 text-truncate">
-    Praeterea iter est quasdam res quas ex communi.
-  </div>
-</div>
 
-<span class="d-inline-block text-truncate" style="max-width: 150px;">
-  Praeterea iter est quasdam res quas ex communi.
-</span>
-              <td valign="top" height="85"  style="padding:0">
+              <p> <%= insect.order %></p>
 
-                <p class=""> <%= insect.description %></p>
-              </div>
               <div class="icon">
                 <%=link_to insect_path(insect) do %>
                   <i class="fa-solid fa-eye"></i>
