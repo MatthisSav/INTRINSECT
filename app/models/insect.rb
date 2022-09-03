@@ -1,6 +1,7 @@
 class Insect < ApplicationRecord
   TYPES = ["Aptérygotes", "Blattoptères", "Coléoptères", "Dermaptères", "Diptères", "Embioptères", "Éphéméroptères", "Grylloblattoptères", "Hémiptères", "Hyménoptères", "Blattoptères", "Lépidoptères", "Mantophasmatoptères", "Mantoptères", "Mécoptères", "Mégaloptères", "Neuroptères", "Odonates", "Orthoptères", "Phasmatoptères", "Phthiraptères", "Plécoptères", "Psocoptères", "Raphidioptères", "Siphonaptères", "Strepsiptères", "Thysanoptères", "Thysanoures", "Trichoptères", "Zoraptères"]
   has_many :bookings, dependent: :destroy
+  has_many :reviews, dependent: :destroy
   belongs_to :user
 
   has_many_attached :photos

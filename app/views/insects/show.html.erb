@@ -35,6 +35,25 @@
       <%= link_to "Modifier", edit_insect_path(@insect) %>
       <br>
       <%= link_to "Réserver cet insecte", new_insect_booking_path(@insect), class:"btn btn-primary mt-3"%>
+<%# add review %>
+
+      <div id="reviews" class="mt-4">
+        <h3 class="">
+          <%= pluralize @insect.reviews.size, "review" %>
+        </h3>
+        <% if @insect.reviews.blank? %>
+          Soit le premier à laisser un avis pour <%= @insect.name %>
+        <% else %>
+          <% @insect.reviews.each do |review| %>
+            <p><%= review.content %></p>
+          <% end %>
+        <% end %>
+
+        <%= simple_form_for([ @insect, @review ]) do |f| %>
+          <%= f.input :content, label:"Votre commentaire", as: :text %>
+          <%= f.button :submit, class:"btn btn-outline-secondary mt-1" %>
+        <% end %>
+      </div>
     </div>
   </div>
 </div>

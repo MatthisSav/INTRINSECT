@@ -5,8 +5,7 @@ class BookingPolicy < ApplicationPolicy
       scope.all
     end
   end
-
-
+  
   def index?
     record.user == user
   end

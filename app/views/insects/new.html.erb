@@ -2,7 +2,7 @@
   <h1>Ajouter un nouvel insecte</h1>
 
   <%= simple_form_for (@insect) do |f| %>
-    <%= f.input :name, label: "Nom",input_html: { class: "h1" } %>
+    <%= f.input :name, label: "Nom", input_html: { class: "h1" } %>
     <%= f.input :description %>
     <%= f.input :order, collection: Insect::TYPES %>
     <%= f.input :address,
