@@ -41,7 +41,7 @@ pyrops = Insect.new(
   name: "Pyrops candelaria pour impressionner vos convives",
   description: "De la même famille des cigales, cet insecte coloré fera son plus bel effet lors de vos événements !",
   order: "Hémiptères",
-  user: user1,
+  user: user2,
   latitude: 48.8648482,
   longitude: 2.3798534,
   address: "16 Vla Gaudelet, 75011 Paris"
@@ -57,7 +57,8 @@ punaise = Insect.new(
   order: "Pentatomidae",
   user: user1,
   latitude: 48.77758,
-  longitude: 2.44803
+  longitude: 2.44803,
+  address: "9 Rue Jean Gabin, 94000 Créteil"
 )
 punaise.photos.attach(io: File.open('db/images/punaise_1.jpeg'), filename: 'punaise_1.jpeg')
 punaise.save!
@@ -69,7 +70,8 @@ luciole = Insect.new(
   order: "Coléoptères",
   user: user1,
   latitude: 48.80536,
-  longitude: 2.12050
+  longitude: 2.12050,
+  address: "Place d'Armes, 78000 Versailles"
 )
 luciole.photos.attach(io: File.open('db/images/luciole_1.jpeg'), filename: 'luciole_1.jpeg')
 luciole.photos.attach(io: File.open('db/images/luciole_2.jpeg'), filename: 'luciole_2.jpeg')
@@ -83,7 +85,8 @@ moustiques = Insect.new(
   order: "Diptères",
   user: user2,
   latitude: 48.86870,
-  longitude: 2.62109
+  longitude: 2.62109,
+  address: "Chem. du Corps de Garde, 77360 Vaires-sur-Marne"
 )
 moustiques.photos.attach(io: File.open('db/images/moustique_1.jpeg'), filename: 'moustique_1.jpeg')
 moustiques.photos.attach(io: File.open('db/images/moustique_2.jpeg'), filename: 'moustique_2.jpeg')
@@ -96,7 +99,8 @@ guepes = Insect.new(
   order: "Hyménoptères",
   user: user2,
   latitude: 48.87970,
-  longitude: 2.30955
+  longitude: 2.30955,
+  address: "1 All. de la Comtesse de Ségur, 75008 Paris"
 )
 guepes.photos.attach(io: File.open('db/images/guepe_1.jpeg'), filename: 'guepe_1.jpeg')
 guepes.photos.attach(io: File.open('db/images/guepe_2.webp'), filename: 'guepe_2.webp')
@@ -110,7 +114,8 @@ fourmis = Insect.new(
   order: "Hyménoptères",
   user: user2,
   latitude: 48.87257,
-  longitude: 2.37365
+  longitude: 2.37365,
+  address: "17 Rue du Buisson Saint-Louis, 75010 Paris"
 )
 fourmis.photos.attach(io: File.open('db/images/fourmis_1.jpeg'), filename: 'fourmis_1.jpeg')
 fourmis.photos.attach(io: File.open('db/images/fourmis_2.jpeg'), filename: 'fourmis_2.jpeg')
@@ -123,7 +128,8 @@ coccinelles = Insect.new(
   order: "Coléoptères",
   user: user3,
   latitude: 48.88024,
-  longitude: 2.17861
+  longitude: 2.17861,
+  address: "9 Av. Albert 1er, 92500 Rueil-Malmaison"
 )
 coccinelles.photos.attach(io: File.open('db/images/coccinelle_1.jpg'), filename: 'coccinelle_1.jpg')
 coccinelles.save!
@@ -135,7 +141,8 @@ coleoptere = Insect.new(
   order: "Coléoptères",
   user: user3,
   latitude: 48.84338,
-  longitude: 2.32277
+  longitude: 2.32277,
+  address: "11 Rue de l'Arrivée, 75015 Paris"
 )
 coleoptere.photos.attach(io: File.open('db/images/coleoptere_1.jpeg'), filename: 'coleoptere_1.jpeg')
 coleoptere.photos.attach(io: File.open('db/images/coleoptere_2.jpeg'), filename: 'coleoptere_2.jpeg')
@@ -146,9 +153,10 @@ papillons = Insect.new(
   name: "papillons",
   description: "En cas de coup dur, louez mes papillons qui vous apporterons chances et bonheur durant toute la période de location",
   order: "Arthropoda",
-  user: user3,
+  user: user1,
   latitude: 48.79512,
-  longitude: 2.31616
+  longitude: 2.31616,
+  address: "0019 aavenue des fruitiers, 93210 Saint-Denis"
 )
 papillons.photos.attach(io: File.open('db/images/papillon.jpeg'), filename: 'papillon.jpeg')
 papillons.photos.attach(io: File.open('db/images/papillon_2.jpeg'), filename: 'papillon_2.jpeg')
@@ -159,9 +167,10 @@ libellules = Insect.new(
   name: "libellules",
   description: "En cas de coup dur, louez mes libellules qui vous apporterons chances et bonheur durant toute la période de location",
   order: "Arthropoda",
-  user: user3,
+  user: user1,
   latitude: 48.85964,
-  longitude: 2.29405
+  longitude: 2.29405,
+  address: "Champ de Mars, 5 Av. Anatole France, 75007 Paris"
 )
 libellules.photos.attach(io: File.open('db/images/libellule_1.jpg'), filename: 'libellule_1.jpg')
 libellules.save!
