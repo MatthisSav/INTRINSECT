@@ -24,16 +24,22 @@
           <div class="card-product-infos">
               <h2><%= insect.name.capitalize%></h2>
               <p> <i><%= insect.order %></i></p>
+              <div class="row">
+  <div class="col-3 text-truncate">
+    Praeterea iter est quasdam res quas ex communi.
+  </div>
+</div>
+
+<span class="d-inline-block text-truncate" style="max-width: 150px;">
+  Praeterea iter est quasdam res quas ex communi.
+</span>
+              <td valign="top" height="85"  style="padding:0">
+
+                <p class=""> <%= insect.description %></p>
+              </div>
               <div class="icon">
                 <%=link_to insect_path(insect) do %>
                   <i class="fa-solid fa-eye"></i>
-                <% end %>
-
-                <% if policy(insect).destroy? %>
-                    <%= link_to '<i class="fa-solid fa-trash"></i>'.html_safe,
-                  insect_path(insect),
-                  method: :delete,
-                  data: { confirm: "Are you sure?"} %>
                 <% end %>
 
               </div>

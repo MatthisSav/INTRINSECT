@@ -9,7 +9,7 @@ class ReviewsController < ApplicationController
     @review = Review.new(review_params)
     @review.insect = @insect
     if @review.save
-      redirect_to insect_path(@insect)
+      redirect_to insect_path(@insect, anchor: "review-#{@review.id}")
     else
       render 'insects/show'
     end
